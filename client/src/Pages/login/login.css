@@ -1,0 +1,77 @@
+.login_bckgrnd{
+    background-image: url("../../../public/Assets/login_backgorund.jpg");
+    width:100%;
+    height:100vh;
+    background-size: cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.login_container{
+    width:400px;
+    height:450px;
+    background-color:#FBFBFBBF;
+    opacity: 0.85;
+    border-radius:20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logs{
+    width:140px;
+    height:60px;
+    margin:25px;
+}
+.input_container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mail{
+    display:flex;
+    align-items: center;
+    margin:30px;
+    width:300px;
+    height:40px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border: 1.5px solid #000;
+}
+.icon{
+    margin:18px;
+}
+input{
+    width:65%;
+    height:75%;
+    outline:none;
+    border:none;
+    background-color: #f0f0f0;
+    color:#000
+}
+.password{
+    display:flex;
+    align-items: center;
+    margin:30px;
+    width:300px;
+    height:40px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border: 1.5px solid #000;   
+}
+.forgotpass{
+    color: #ff0000;
+    font-size: 16px;
+    text-decoration-line: underline;
+    width:300px; 
+    cursor:pointer;
+}
+.button{
+    width: 100px;
+    height:35px;
+    border-radius: 8px;
+    background-color: #143460;
+    color:white;
+    margin:30px;
+    font-size:18px;
+    border:1.5px solid black;
+}
