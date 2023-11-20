@@ -19,7 +19,7 @@ const Login = () => {
     return (
         <div className='login_bckgrnd'>
             <form className="login_container" onSubmit={handlesubmit}>
-                <img className="logs" src="/Assets/logos.png" alt="Not available"/>
+                <img className="logs" src="/Assets/logos.png" alt="Netcon Technologies"/>
                 <div className="input_container">
                     <div className='mail'>
                         <MailIcon className='icon'/>
