@@ -7,8 +7,8 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const Login = () => {
-    const [PassVisible,SetPassVisible]=useState(false)
-    const [mail, Setmail]=useState('')
+    const [PassVisible,SetPassVisible]=useState(false) // eslint-disable-next-line
+    const [mail, Setmail]=useState('') // eslint-disable-next-line
     const [password,Setpassword]=useState('')
     const handlesubmit=(e)=>{
         e.preventDefault();
