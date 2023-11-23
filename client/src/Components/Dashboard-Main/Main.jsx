@@ -46,11 +46,11 @@ const Main = () => {
         <div className='maps'> 
             {/* eslint-disable-next-line */}
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1695438650245!2d80.20468467335024!3d13.02487301371156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526746efd1a251%3A0xa4c7deb4b05fc267!2sNetcon%20Technologies%20India%20Private%20Limited!5e0!3m2!1sen!2sin!4v1700652167101!5m2!1sen!2sin" 
-                width="800" 
+                width="740" 
                 height="300"  
-                allowfullscreen="" 
+                // allowfullscreen="" 
                 loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
+                referrerPolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
     </div>
