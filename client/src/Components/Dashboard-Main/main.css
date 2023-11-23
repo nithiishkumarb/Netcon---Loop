@@ -1,0 +1,127 @@
+.dashboard-main{
+    flex:7.5;
+    margin-left: 25px;
+    padding-right: 25px;
+    padding-top:20px;
+}
+.Total-counts{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top:20px;
+    margin-bottom:20px
+}
+.content-box{
+    width: 200px;
+    height: 90px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    justify-content: space-around;
+    position: relative;
+}
+.content-box span{
+    font-size: 18px;
+}
+.industries{
+    background-color: #87C4FF80;
+    border: 1.5px solid rgba(3, 27, 246, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(93, 93, 93, 0.25);
+}
+.Water-storage{
+    background-color: #C7E9B0;
+    border: 1.5px solid rgba(114, 186, 98, 0.5);
+    box-shadow: 0px 4px 4px 0px rgba(93, 93, 93, 0.25);
+}
+.generator{
+    background-color: #FFDFDF;
+    border:1.5px solid rgba(169, 71, 141, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(93, 93, 93, 0.25);
+}
+.industries_icons{
+    position: absolute;
+    right:25px;
+    bottom:10px;
+    background-color: #92BBEB;
+    color:blue;
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid blue
+}
+.Water-storage-icons{
+    position: absolute;
+    right:25px;
+    bottom:10px;
+    background-color: #7CE36B;
+    color:green;
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #1A7C01
+}
+.generator-icons{
+    position: absolute;
+    right:25px;
+    bottom:10px;
+    background-color: #F796E8;
+    color:#BF16AE;
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #BF16AE
+}
+.consumption-container{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.consumption{
+    width: 300px;
+    height: 190px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #BABABA;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.26); 
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.26);  
+}
+.consumption span{
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.total-water{
+    margin-top:15px;
+    display: flex;
+}
+.total-energy{
+    margin-top:15px;
+    display: flex;
+    position: relative;
+}
+.graph{
+    width:280px;
+    height: 100px;
+}
+.maps{
+    margin-top:20px;
+    border:1px solid;
+}
+.dashboard-Rightbar{
+    position: sticky;
+    top:50px;
+}

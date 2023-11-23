@@ -1,13 +1,19 @@
 import React from 'react'
-import Sidebar from '../../Components/Sidebar/Sidebar' // eslint-disable-next-line
+import Sidebar from '../../Components/Sidebar/Sidebar'
 import Topbar from '../../Components/Topbar/Topbar'
-import "./Dashboard.css"
+import Rightbar from "../../Components/Rightbar/Rightbar.jsx"
+import Main from '../../Components/Dashboard-Main/Main';
+import "./Dashboard.css";
 const Dashboard = () => {
     return (
-        <div className='dashboard'>
+        <>
             <Topbar/>
-            <Sidebar/>
-        </div>
+            <div className='dashboard'>
+                <Sidebar/>
+                <Main/>
+                <Rightbar/>
+            </div>
+        </>
     )
 }
-export default Dashboard
+export default Dashboard 
