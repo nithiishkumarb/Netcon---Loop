@@ -1,0 +1,24 @@
+.manage-water{
+    display:flex;
+    width:100%;
+}
+.manage-water-container{
+    width:100%;
+    margin:20px 0px 0px 20px;
+}
+.manage-water-top{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    margin:20px 0px 10px 0px;
+}
+.Consumption{
+    width:280px;
+    height:130px;
+    background-color: aqua;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius:10px;
+}

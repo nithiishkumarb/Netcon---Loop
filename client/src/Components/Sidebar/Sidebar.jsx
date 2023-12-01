@@ -1,13 +1,12 @@
 import React from 'react'
 import "./Sidebar.css"
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import BoltSharpIcon from '@mui/icons-material/BoltSharp';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import TuneIcon from '@mui/icons-material/Tune';
 import ChecklistIcon from '@mui/icons-material/Checklist';
-import Login from "../../Pages/login/Login";
 const Sidebar = () => {
     return (
         <div className='sidebar'>
@@ -19,12 +18,12 @@ const Sidebar = () => {
                 </div>
             </div>
             <div className="sidebarList">
-                <Link to="/dashboard"> <DashboardIcon className='ListIcons'/> <span>Dashboard</span></Link>
-                <Link to="/industries"> <ApartmentIcon className='ListIcons'/> <span>Industries</span></Link>
-                <Link to="/manage-energy"> <BoltSharpIcon className='ListIcons'/> <span>Manage Energy</span></Link>
-                <Link to="/manage-water"> <WaterDropIcon className='ListIcons'/> <span>Manage Water</span></Link>
-                <Link to="/controls"> <TuneIcon className='ListIcons'/> <span>Controls</span></Link>
-                <Link to="/login" element={<Login/>}> <ChecklistIcon className='ListIcons'/> <span>Logs</span></Link>
+                <NavLink to="/dashboard" activeClassName="active"> <DashboardIcon className='ListIcons'/> <span>Dashboard</span></NavLink>
+                <NavLink to="/industries" activeClassName="active"> <ApartmentIcon className='ListIcons'/> <span>Industries</span></NavLink>
+                <NavLink to="/manage-energy" activeClassName="active"> <BoltSharpIcon className='ListIcons'/> <span>Manage Energy</span></NavLink>
+                <NavLink to="/manage-water" activeClassName="active"> <WaterDropIcon className='ListIcons'/> <span>Manage Water</span></NavLink>
+                <NavLink to="/controls" activeClassName="active"> <TuneIcon className='ListIcons'/> <span>Controls</span></NavLink>
+                <NavLink to="/logs" activeClassName="active"> <ChecklistIcon className='ListIcons'/> <span>Logs</span></NavLink>
             </div>
         </div>
     )

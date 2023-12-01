@@ -41,16 +41,18 @@
     cursor: pointer;
     color:#D4D4D4;
     text-decoration:none;
+    &.active{
+        background-color: #D4D4D4;
+        color: #0B0B0B;
+    }
+    &:hover{
+        background-color: #D4D4D4;
+        color: #0B0B0B;
+        text-decoration: underline;
+    }
 }
 .ListIcons{
     margin: 0px 10px 0px 20px;
 }
-.sidebarList a:first-child{
-    background-color: #D4D4D4;
-    color: #0B0B0B;
-}
 .sidebarList a:hover{
-    background-color: #D4D4D4;
-    color: #0B0B0B;
-    text-decoration: underline;
 }

@@ -1,0 +1,89 @@
+.Industries{
+    display:flex;
+    font-family: 'Cabin', sans-serif;
+}
+.Industries-container{
+    display:flex;
+    width:100%;
+    flex-direction: column;
+    align-items: center;
+}
+.Industries-Top{
+    display:flex;
+    width:  90%;
+    margin-top:25px;
+    align-items: center;
+    justify-content: space-between;
+}
+.Industry-Searchbar{
+    width: 300px;
+    height: 30px;
+    display:flex;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid #000;
+    background: #EEE;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+.Industry-Searchbar input{
+    background-color: transparent;
+    margin-left: 10px;
+}
+.Industries-Top button{
+    border-radius: 10px;
+    width: 120px;
+    height: 32px;
+    background-color: #143460;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    border:none;
+    cursor:pointer;
+}
+.Industries-list{
+    width:90%;
+    margin-top: 25px;
+}
+.Industries-list .Industries-header{
+    background-color: #143460;
+    color:white;
+    height:30px;
+}
+.Industries-Body td{
+    height: 30px;
+    text-align: center;
+}
+.Industries-Body:nth-child(even){
+    background-color: #D9D9D9;;
+}
+.Industries-PageBtn{
+    margin-top:20px;
+    width:18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Industries-PageBtn span{
+    cursor: pointer;
+}
+.Industries-PageBtn span:nth-child(1){
+    border-radius: 50%;
+    background-color: #143460;
+    width:24px;
+    height:24px;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Industries-PageBtn button{
+    color:white;
+    background-color: #143460;
+    border:none;
+    width:70px;
+    height:25px;
+    border-radius: 5px;
+    cursor: pointer;
+} 
