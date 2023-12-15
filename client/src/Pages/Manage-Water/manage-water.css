@@ -1,24 +1,116 @@
 .manage-water{
     display:flex;
     width:100%;
+    font-family: 'Gothic',Arial,sans-serif;
 }
 .manage-water-container{
     width:100%;
     margin:20px 0px 0px 20px;
 }
-.manage-water-top{
+.Total-WConsumption-container{
     width:100%;
+    margin-top:20px;
     display:flex;
     justify-content: space-around;
-    margin:20px 0px 10px 0px;
 }
-.Consumption{
-    width:280px;
-    height:130px;
-    background-color: aqua;
+.Total-WConsumption-box{
+    width:260px;
+    height:100px;
+    box-shadow: 0px 4px 4px 0px rgba(93, 93, 93, 0.25);
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    display:flex;
+    position: relative;
+    cursor:pointer;
+}
+.Rectangle-design{
+    width:10px;
+    height:100%;
+    border-radius: 5px 0px 0px 5px;
+}
+.Overall{
+    background-color: rgb(214, 3, 147);
+}
+.Today{
+    background-color:blue;
+}
+.Tank{
+    background-color: #1A7C01;
+}
+.Box-container{
     display:flex;
     flex-direction: column;
-    align-items: center;
+    justify-content:space-around;
+    margin-left:20px;
+}
+.Box-container h4{
+    letter-spacing: 2.5px;
+    color: #777777;
+    font-size: medium;
+}
+.Icons{
+    position:absolute;
+    top:10px;
+    right:12px;
+}
+.overall{
+    color:rgb(214, 3, 147);
+}
+.today{
+    color:blue;
+}
+.tank{
+    color:#1A7C01;
+}
+.Box-container h2{
+    position:relative;
+}
+.manage-water-bottom{
+    display:flex;
+}
+.Tanks{
+    flex:4;
+    margin-top:25px;
+}
+.Tank-list{
+    width:90%;
+    margin-top: 25px;
+}
+.Tank-list .Tank-header{
+    background-color: #143460;
+    color:white;
+    height:30px;
+}
+.Tank-Body td{
+    height: 30px;
+    text-align: center;
+}
+.Tank-Body:nth-child(even){
+    background-color: #D9D9D9;;
+}
+.WGraph-container{
+    flex:6;
+    margin-top:25px;
+}
+.WGraph-Details{
+    display:flex;
     justify-content: space-around;
-    border-radius:10px;
+    margin-top:15px;
+    align-items: center;
+}
+.WGraph-Details span{
+    font-weight: bolder;
+    font-size: small;
+}
+.WGraph-Details button{
+    border:none;
+    font-weight: bold;
+    background-color: white;
+    margin-left:30px;
+    border-radius: 3.5px;
+    width:80px;
+    height:25px;
+    cursor:pointer;
+    background-color: #27374D;
+    color:white;
 }

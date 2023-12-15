@@ -1,27 +1,129 @@
 .Manage-energy{
     display:flex;
     width:100%;
+    font-family: 'Gothic',Arial,sans-serif;
 }
 .manage-energy-container{
     margin: 20px 0px 0px 20px;
     width:100%
 }
-.Overallconsumption{
+.Total-Consumption-container{
     width:100%;
     margin-top:20px;
     display:flex;
     justify-content: space-around;
 }
-.TotalConsumption{
-    width:220px;
-    height:120px;
-    background-color: antiquewhite;
+.Total-Consumption-box{
+    width:260px;
+    height:100px;
+    box-shadow: 0px 4px 4px 0px rgba(93, 93, 93, 0.25);
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    display:flex;
+    position: relative;
 }
+.Design-Box{
+    width:10px;
+    height:100%;
+    border-radius: 5px 0px 0px 5px;
+}
+.Overall{
+    background-color: rgb(214, 3, 147);
+}
+.Hvac{
+    background-color:blue;
+}
+.Light{
+    background-color: #1A7C01;
+}
+.Box-container{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    margin-left:20px;
+}
+.Box-container h4{
+    letter-spacing: 2.5px;
+    color: #777777;
+    font-size: medium;
+}
+.Icons{
+    position:absolute;
+    top:10px;
+    right:12px;
+}
+.overall{
+    color:rgb(214, 3, 147);
+}
+.hvac{
+    color:blue;
+}
+.light{
+    color:#1A7C01;
+}
+
 .Today-consumption{
-    margin-top:20px;
+    margin-top:25px;
 }
 .Today-consumption-container{
     display:flex;
     justify-content: space-around;
+    margin-top:15px;
+}
+.Today-Overall,.Today-HVAC,.Today-Light{
+    margin-top:15px;
+    position:relative;
+    display:flex;
+}
+.icons{
+    border-radius: 50%;
+    width:32px;
+    height:32px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-right:10px;
+}
+.icons-overall{
+    color:rgb(214, 3, 147);
+    background-color: #FBBFEB;
+    border:1px solid rgb(214, 3, 147);
+}
+.icons-hvac{
+    color:blue;
+    background-color:#8893bc;
+    border:1px solid blue;
+}
+.icons-light{
+    color:#1A7C01;
+    border:1px solid #1A7C01;
+    background-color: #A0EF8C;
+}
+.Today-Overall-Container h5{
+    letter-spacing: 2px;
+    color: #777777;
+    margin-bottom:5px;
+}
+.Graph-container{
     margin-top:10px;
+}
+.Graph-Details{
+    display:flex;
+    justify-content: space-around;
+    margin-top:10px;
+}
+.Graph-Details span{
+    font-weight: bold;
+}
+.Graph-Details button{
+    border:none;
+    font-weight: bold;
+    background-color: white;
+    margin-left:30px;
+    border-radius: 3.5px;
+    width:80px;
+    height:25px;
+    cursor:pointer;
+    background-color: #27374D;
+    color:white;
 }

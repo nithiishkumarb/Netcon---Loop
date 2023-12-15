@@ -22,7 +22,8 @@
     position: relative;
 }
 .content-box span{
-    font-size: 18px;
+    letter-spacing: 1.5px;
+    color:#414141;
 }
 .industries{
     background-color: #87C4FF80;
@@ -41,42 +42,42 @@
 }
 .industries_icons{
     position: absolute;
-    right:25px;
-    bottom:10px;
+    right:15px;
+    bottom :10px;
     background-color: #92BBEB;
     color:blue;
-    width:32px;
-    height:32px;
     border-radius: 50%;
     display:flex;
+    width:32px;
+    height:32px;
     align-items: center;
     justify-content: center;
     border:1px solid blue
 }
 .Water-storage-icons{
     position: absolute;
-    right:25px;
+    right:15px;
     bottom:10px;
     background-color: #7CE36B;
     color:green;
-    width:32px;
-    height:32px;
     border-radius: 50%;
     display:flex;
+    width:32px;
+    height:32px;
     align-items: center;
     justify-content: center;
     border:1px solid #1A7C01
 }
 .generator-icons{
     position: absolute;
-    right:25px;
+    right:15px;
     bottom:10px;
     background-color: #F796E8;
     color:#BF16AE;
-    width:32px;
-    height:32px;
     border-radius: 50%;
     display:flex;
+    width:32px;
+    height:32px;
     align-items: center;
     justify-content: center;
     border:1px solid #BF16AE
