@@ -3,33 +3,34 @@
     display:flex;
     flex-direction:column;
     width: 200px;
-    height: calc(100vh - 50px);
+    height: 100vh;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     scroll-behavior: smooth;
     position: sticky;
-    top:50px;
+    z-index: 1;
+    top:0;
 }
-.profilecontainer{
+.LogoContainer{
     display:flex;
     flex-direction: column;
     align-items: center;
     cursor:pointer;
 }
-.icon{
-    width:65px;
-    height: 65px;
+.Logo{
+    margin-top:15px;
+    width:45px;
+    height: 35px;
 }
-.profile-name{
-    color: #D4D4D4;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
+.Logoname{
+    color:#D4D4D4;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .sidebarList{
     display:flex;
     flex-direction: column;
-    margin-top:10px;
+    margin-top:15px;
 }
 .sidebarList a{
     display:flex;
@@ -41,6 +42,7 @@
     cursor: pointer;
     color:#D4D4D4;
     text-decoration:none;
+    font-weight: 600;
     &.active{
         background-color: #D4D4D4;
         color: #0B0B0B;
@@ -53,6 +55,4 @@
 }
 .ListIcons{
     margin: 0px 10px 0px 20px;
-}
-.sidebarList a:hover{
 }

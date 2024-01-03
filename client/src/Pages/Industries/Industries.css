@@ -2,11 +2,16 @@
     display:flex;
     font-family: 'Cabin', sans-serif;
 }
+.Industries_container{
+    width:100%;
+}
 .Industries-container{
     display:flex;
     width:100%;
     flex-direction: column;
     align-items: center;
+    height:calc(100vh - 50px);
+    justify-content: space-around;
 }
 .Industries-Top{
     display:flex;
@@ -29,6 +34,10 @@
 .Industry-Searchbar input{
     background-color: transparent;
     margin-left: 10px;
+}
+.Industry-Searchbar-icon{
+    margin-left:40px;
+    cursor:pointer;
 }
 .Industries-Top button{
     border-radius: 10px;

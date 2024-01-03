@@ -1,48 +1,39 @@
-import React from 'react'
-
+import {useState,useEffect} from 'react'
+import {Tanks_listcall} from "../../apicalls"
 const Tanks = () => {
+    const [Tanks,SetTanks]=useState([])
+    useEffect(()=>{
+        Tanks_listcall().then((response)=>{
+            SetTanks(response.data)
+        })
+    })
     return (
         <div className='Tanks'>
-            <h3>Tanks :</h3>
+            <h3>Tanks</h3>
             <table className='Tank-list'>
                 <thead className='Tank-header'>
                     <tr>
-                        <th>S.No</th>
                         <th>Tank Id</th>
+                        <th>Tank Location</th>
                         <th>Active</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className='Tank-Body'>
-                        <td>1.</td>
-                        <td>1234</td>
-                        <td>Online</td>
+                {
+                    Array.isArray(Tanks) && Tanks.length > 0 ? (
+                    Tanks.map((tanks, index) => (
+                        <tr className='Tank-Body' key={index}>
+                        <td>{tanks.Tank_ID}</td>
+                        <td>{tanks.Tank_location}</td>
+                        <td style={{color:"#1A7C01", fontWeight:"bold"}}>Online</td>
+                        </tr>
+                    ))
+                    ) : (
+                    <tr>
+                        <td colSpan="4">No tanks data available</td>
                     </tr>
-                    <tr className='Tank-Body'>
-                        <td>2.</td>
-                        <td>1234</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr className='Tank-Body'>
-                        <td>3.</td>
-                        <td>1234</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr className='Tank-Body'>
-                        <td>4.</td>
-                        <td>1234</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr className='Tank-Body'>
-                        <td>5.</td>
-                        <td>1234</td>
-                        <td>Online</td>
-                    </tr>
-                    <tr className='Tank-Body'>
-                        <td>6.</td>
-                        <td>1234</td>
-                        <td>Online</td>
-                    </tr>
+                    )
+                }
                 </tbody>
             </table>
         </div>

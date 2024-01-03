@@ -1,28 +1,34 @@
-import React,{useState} from 'react'
+import {useState,useContext} from 'react'
 import "./Topbar.css"
-import {Link} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom"
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { AuthContext } from "../../context/AuthContext.js";
 const Topbar = () => {
     const [visible,SetVisible]=useState(false)
     const handleProfileList=()=>{
         SetVisible(!visible);
     }
+    const { dispatch } = useContext(AuthContext);
+    const navigate=useNavigate();
+    const handleLogout = () => {
+    const islogout=window.confirm("Press ok to logout");
+    if(islogout){
+    dispatch({ type: 'LOGIN_START' });
+    navigate.push('/login');
+    }else{
+        window.location.reload();
+    }}
     return (
         <div className='Topbar'>
-            <div className='TopbarLeft'>
-                <img className="logo" src="/Assets/logo.png" alt='logo'/>
-                <h1 className='logoname'>Netcon</h1>
-            </div>
             <div className='TopbarRight'>
                 <Link to="/notification" className='notification-container'>
                     <NotificationsActiveIcon/>
-                    <span>1</span>
+                    {/* <span>1</span> */}
                 </Link>
                 <div onClick={handleProfileList} className='Profile'>
                     <AccountCircleIcon/>
-                    <span className='userName'>Netcon</span>
                     <ArrowDropDownIcon  className='icons'/>
                 </div>
             </div>
@@ -30,7 +36,7 @@ const Topbar = () => {
                 visible ? 
                 ( <div className='profileList'>
                     <Link to="/profile">Profile</Link>
-                    <Link to="/login">Logout</Link>
+                    <Link to="/login" onClick={handleLogout}>Logout</Link>
                 </div>) : null
             }
         </div>

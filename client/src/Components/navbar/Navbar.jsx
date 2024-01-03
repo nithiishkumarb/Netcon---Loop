@@ -1,5 +1,4 @@
-import React from 'react'
-import "./Sidebar.css"  
+import "./navbar.css"  
 import {NavLink} from "react-router-dom"
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ApartmentIcon from '@mui/icons-material/Apartment';
@@ -7,18 +6,15 @@ import BoltSharpIcon from '@mui/icons-material/BoltSharp';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import TuneIcon from '@mui/icons-material/Tune';
 import ChecklistIcon from '@mui/icons-material/Checklist';
-const Sidebar = () => {
+const Navbar = () => {
     return (
         <div className='sidebar'>
-            <div className='profilecontainer'>
-                <img className="icon" src="/Assets/user.png" alt='user'/>
-                <div className='profile-name'>
-                    <h3>Netcon Tech</h3>
-                    <h6>Operator</h6>
-                </div>
+            <div className='LogoContainer'>
+                <img className="Logo" src="/Assets/logo.png" alt='logo'/>
+                <h1 className='Logoname'>netcon</h1>
             </div>
             <div className="sidebarList">
-                <NavLink to="/dashboard" activeClassName="active"> <DashboardIcon className='ListIcons'/> <span>Dashboard</span></NavLink>
+                <NavLink to="/" activeClassName="active"> <DashboardIcon className='ListIcons'/> <span>Dashboard</span></NavLink>
                 <NavLink to="/industries" activeClassName="active"> <ApartmentIcon className='ListIcons'/> <span>Industries</span></NavLink>
                 <NavLink to="/manage-energy" activeClassName="active"> <BoltSharpIcon className='ListIcons'/> <span>Manage Energy</span></NavLink>
                 <NavLink to="/manage-water" activeClassName="active"> <WaterDropIcon className='ListIcons'/> <span>Manage Water</span></NavLink>
@@ -28,4 +24,4 @@ const Sidebar = () => {
         </div>
     )
 }
-export default Sidebar
+export default Navbar

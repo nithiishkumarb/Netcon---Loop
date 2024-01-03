@@ -5,7 +5,7 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 const Todayconsumption = () => {
   return (
     <div className='Today-consumption'>
-            <h3>Today Consumption :</h3>
+            <h3>Today Consumption</h3>
             <div className='Today-consumption-container'>
               <div className='Today-Overall'>
                 <div className='icons icons-overall'>

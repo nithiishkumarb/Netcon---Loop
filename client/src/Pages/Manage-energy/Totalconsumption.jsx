@@ -5,7 +5,7 @@ import LightbulbIcon from '@mui/icons-material/Lightbulb';
 const Totalconsumption = () => {
   return (
         <div className='Total-consumption'>
-            <h3>Total Consumption :</h3>
+            <h3>Total Consumption</h3>
             <div className='Total-Consumption-container'>
               <div className='Total-Consumption-box'>
                 <div className='Design-Box Overall'/>

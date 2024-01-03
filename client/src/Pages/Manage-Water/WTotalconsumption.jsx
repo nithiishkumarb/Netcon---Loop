@@ -5,13 +5,13 @@ import "./manage-water.css"
 const WTotalconsumption = () => {
   return (
         <div className='Total-Wconsumption'>
-            <h3>Total Consumption :</h3>
+            <h3>Total Consumption</h3>
             <div className='Total-WConsumption-container'>
               <div className='Total-WConsumption-box'>
                 <div className='Rectangle-design Overall'/>
                 <div className='Box-container'>
                   <h4>Overall</h4>
-                  <h2>123,123 <span style={{fontSize: "medium"}}>m3</span></h2>
+                  <h2>123,123 m³</h2>
                 </div>
                   <TimelineIcon className='Icons overall'/>
               </div>
@@ -19,9 +19,7 @@ const WTotalconsumption = () => {
                 <div className='Rectangle-design Today'></div>
                 <div className='Box-container'>
                   <h4>Today</h4>
-                  <h2>13,123  <span style={{fontSize: "medium"}}>m 
-                              <span style={{fontSize:"smaller"}}>3</span>
-                              </span></h2>
+                  <h2>13,123 m³</h2>
                 </div>
                 <TodayIcon className='Icons today'/>
               </div>

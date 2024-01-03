@@ -1,129 +1,110 @@
-import React from 'react'
-import "./Industries.css"
-import { Link } from 'react-router-dom'
-import Topbar from "../../Components/Topbar/Topbar"
-import Sidebar from "../../Components/Sidebar/Sidebar"
+import React, { useState, useEffect } from 'react';
+import "./Industries.css";
+import { Link } from 'react-router-dom';
+import Topbar from "../../Components/Topbar/Topbar";
+import Navbar from "../../Components/navbar/Navbar";
 import SearchIcon from '@mui/icons-material/Search';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { industriesCall,fetchIndustriesPDF } from "../../apicalls";
+
 const Industries = () => {
+  const [industryList, setIndustryList] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    industriesCall().then((response) => {
+      if (Array.isArray(response)) {
+        setIndustryList(response);
+      } else {
+        setIndustryList([]);
+      }
+    });
+  }, []);
+
+  // Filter industries based on the search query
+  const filteredIndustries = industryList.filter((industry) =>
+    industry.Industry_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const downloadPDF = async () => {
+    try {
+      const pdfBlob = await fetchIndustriesPDF();
+
+      // Create a blob object from the response
+      const blob = new Blob([pdfBlob], { type: 'application/pdf' });
+
+      // Create a link element, set its href and download attributes, and trigger the click event
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = 'industries_list.pdf';
+      link.click();
+    } catch (error) {
+      console.error('Error downloading PDF:', error);
+      // Handle error, display message to the user, etc.
+    }
+  };
+
   return (
-    <>
-      <Topbar/>
-      <div className='Industries'>
-        <Sidebar/>
+    <div className='Industries'>
+      <Navbar />
+      <div className='Industries_container'>
+        <Topbar />
         <div className='Industries-container'>
           <div className='Industries-Top'>
-            <h2>Industries:</h2>
+            <h2>Industries</h2>
             <div className='Industry-Searchbar'>
-              <SearchIcon/>
-              <input placeholder='Search a industry . . .'></input>
+              <input
+                placeholder='Search an industry...'
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <SearchIcon className='Industry-Searchbar-icon' />
             </div>
-              <button><AddCircleOutlineIcon/>Add industry</button>
-              <button><FileDownloadIcon/>Download</button>
+            <button><AddCircleOutlineIcon />Add industry</button>
+            <button onClick={downloadPDF}><FileDownloadIcon />Download</button>
           </div>
-            <table className='Industries-list'>
-              <thead className='Industries-header'>
-                <tr>
-                  <th>Si.No.</th>
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>location</th>
-                  <th>Status</th>
-                  <th>Actions</th>
+          {
+            filteredIndustries.length>0 ? (
+              <table className='Industries-list'>
+            <thead className='Industries-header'>
+              <tr>
+                <th>Si.No.</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredIndustries.map((industry, index) => (
+                <tr className='Industries-Body' key={industry.Industry_ID}>
+                  <td>{index + 1}</td>
+                  <td>{industry.Industry_ID}</td>
+                  <td>{industry.Industry_name}</td>
+                  <td>{industry.Industry_place}</td>
+                  <td><Link to="/industry-netcon">View</Link></td>
                 </tr>
-              </thead>
-              <tbody>
-                <tr className='Industries-Body'>
-                  <td>1</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link to="/industry-netcon">view</Link></td>
-                </tr>
-                <tr className='Industries-Body'>
-                  <td>2</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr>
-                <tr className='Industries-Body'>
-                  <td>3</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr><tr className='Industries-Body'>
-                  <td>4</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr><tr className='Industries-Body'>
-                  <td>5</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr><tr className='Industries-Body'>
-                  <td>6</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr>
-                <tr className='Industries-Body'>
-                  <td>7</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr>
-                <tr className='Industries-Body'>
-                  <td>8</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr>
-                <tr className='Industries-Body'>
-                  <td>9</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr>
-                <tr className='Industries-Body'>
-                  <td>10</td>
-                  <td>21345</td>
-                  <td>Netcon</td>
-                  <td>Chennai</td>
-                  <td>online</td>
-                  <td><Link>view</Link></td>
-                </tr>
-              </tbody>
-            </table>
-            <div className='Industries-PageBtn'>
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <button>Next</button>
-            </div>
+              ))}
+            </tbody>
+          </table>
+            ):(
+              <div>
+                <span>No result found</span>
+              </div>
+            )
+          }
+          <div className='Industries-PageBtn'>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <button>Next</button>
           </div>
         </div>
-    </>
-  )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Industries
+export default Industries;

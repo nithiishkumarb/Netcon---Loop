@@ -2,13 +2,13 @@ import React from 'react'
 import "./industry.css"
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 import Topbar from '../Topbar/Topbar';
-import Sidebar from '../Sidebar/Sidebar';
+import Navbar from '../navbar/Navbar';
 const Industry = () => {
-  return (
-    <>
-        <Topbar/>
+    return (
+    <div className="Particular-industry">
+        <Navbar/>
         <div className='industrys'>
-            <Sidebar/>
+            <Topbar/>
             <div className='industry-container'>
                 <div className='industry-status'>
                     <h4>Consumer: <span>Netcon-Chennai</span></h4>
@@ -17,26 +17,20 @@ const Industry = () => {
                 <div className='Industry-main'>
                     <div className='industry-main-left'>
                         <div className='total-consumption'>
-                            <h3>Overall Water Consumption</h3>
-                            <div className='Total-water-value'>
-                                <h3>12,221,234 
-                                    <span>m<span>3</span></span>
-                                </h3>
-                            </div>
+                            <h4>Overall Water Consumption</h4>
+                            <h2>12,221,234 m³</h2>
                         </div>
                         <div className='total-consumption'>
-                            <h3>Overall Energy Consumption</h3>
-                            <h3>14,684 W/h</h3>
+                            <h4>Overall Energy Consumption</h4>
+                            <h2>14,157,684 W/h</h2>
                         </div>
                         <div className='total-consumption'>
-                            <h3>Today Water Consumption</h3>
-                            <h3>12,221,234 
-                                    <span>m<span>3</span></span>
-                                </h3>
+                            <h4>Today Water Consumption</h4>
+                            <h2>19,234 m³</h2>
                         </div>
                         <div className='total-consumption'>
-                            <h3>Today Energy Consumption</h3>
-                            <h3>16,298 W/h</h3>
+                            <h4>Today Energy Consumption</h4>
+                            <h2>16,298 W/h</h2>
                         </div>
                     </div>
                     <div className='industry-main-right'>
@@ -73,7 +67,7 @@ const Industry = () => {
                 </div>
             </div>
         </div>
-    </>
+    </div>
   )
 }
 

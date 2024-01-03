@@ -30,21 +30,27 @@
     margin-top:15px;
 }
 .searchbar .search-icon{
-    width:20px;
-    margin: 0px 5px 0px 10px;
+    width:18px;
+    margin: 0px 5px 0px 15px;
+    cursor:pointer;
 }
 .searchbar input{
     background-color: transparent;
+    margin-left:15px;
 }
 .industries-list{
     margin-top: 20px;
     width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .industry{
     display:flex;
     flex-direction: column;
     width:100%;
-    height: 75px;
+    height: 90px;
     position: relative;
     margin-top:5px;
     justify-content: center;
@@ -52,16 +58,18 @@
 }
 .industry h3{
     margin-left:10px;
+    font-weight: 600;
 }
 .industry span{
     font-size: 12px;
-    margin-top: 2px;
+    margin-top: 4px;
     margin-left: 10px;
 }
 .arrow-icon{
     position: absolute;
-    right:25px;
-    top:20px;
+    right:15px;
+    top:35px;
+    color:black
 }
 .industry:nth-child(odd){
     background-color: #EEE;

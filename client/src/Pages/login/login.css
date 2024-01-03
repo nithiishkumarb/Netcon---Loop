@@ -74,4 +74,5 @@ input{
     margin:30px;
     font-size:18px;
     border:1.5px solid black;
+    cursor:pointer;
 }

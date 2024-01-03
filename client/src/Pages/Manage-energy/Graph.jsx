@@ -3,7 +3,7 @@ import "./Manage-energy.css"
 const Graph = () => {
   return (
     <div className='Graph-container'>
-      <h3>Graph :</h3>
+      <h3>Graph</h3>
       <div className='Graph-Details' >
         <span>From: <input type='date'/></span>
         <span>To: <input type='date'/></span>
