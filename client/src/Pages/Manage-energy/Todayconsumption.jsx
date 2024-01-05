@@ -22,7 +22,7 @@ const Todayconsumption = () => {
                   </div>
                   <div className='Today-Overall-Container'>
                     <h5>HVAC</h5>
-                    <h3 className='hvac'>12,000 <span Style="font-size: medium">w/h</span></h3>
+                    <h3 className='hvac'>6,000 <span Style="font-size: medium">w/h</span></h3>
                   </div>
               </div>
               <div className='Today-Light'>
@@ -31,7 +31,7 @@ const Todayconsumption = () => {
                 </div>
                 <div className='Today-Overall-Container'>
                   <h5>Light & others</h5>
-                  <h3 className='light'>12,000 <span Style="font-size: medium">w/h</span></h3>
+                  <h3 className='light'>6,000 <span Style="font-size: medium">w/h</span></h3>
                 </div>
               </div>
             </div>

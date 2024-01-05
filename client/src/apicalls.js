@@ -7,7 +7,7 @@ export const loginCall = async (userCredential,dispatch) => {
     const res = await axios.post("http://localhost:6001/api/user/login", userCredential);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       return res.data
-  } catch(err){
+  } catch(err){ 
       dispatch({ type: "LOGIN_FAILURE", payload: err });
       return err.response
   }
@@ -22,6 +22,7 @@ export const industriesCall= async()=>{
     return err
   }
 }
+
 //Tanks API call
 export const tankscall=async()=>{
   try{
@@ -41,6 +42,7 @@ export const generatorcall=async()=>{
     return err
   }
 }
+
 //Rightbar Industry_List
 export const industry_listcall=async()=>{
   try{

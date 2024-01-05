@@ -11,7 +11,7 @@ const Totalconsumption = () => {
                 <div className='Design-Box Overall'/>
                 <div className='Box-container'>
                   <h4>Overall</h4>
-                  <h2>123,123 <span style={{fontSize: "medium"}}>w/h</span></h2>
+                  <h2>55,846 <span style={{fontSize: "medium"}}>w/h</span></h2>
                 </div>
                   <TimelineIcon className='Icons overall'/>
               </div>
@@ -19,7 +19,7 @@ const Totalconsumption = () => {
                 <div className='Design-Box Hvac'></div>
                 <div className='Box-container'>
                   <h4>HVAC</h4>
-                  <h2>13,123 <span style={{fontSize: "medium"}}>w/h</span></h2>
+                  <h2>43,123 <span style={{fontSize: "medium"}}>w/h</span></h2>
                 </div>
                 <AcUnitIcon className='Icons hvac'/>
               </div>

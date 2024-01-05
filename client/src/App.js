@@ -7,6 +7,7 @@ import Industry from "./Components/Particular-Industry/industry.jsx"
 import ManageEnergy from "./Pages/Manage-energy/Manage-energy.jsx"
 import ManageWater from "./Pages/Manage-Water/Manage-water.jsx";
 import Controls from "./Pages/Controls/Controls.jsx"
+import Addindustry from "./Components/Add industry/Addindustry.jsx";
 import Logs from "./Pages/Logs/Logs.jsx"
 import { AuthContext } from "./context/AuthContext.js";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/manage-energy" element={user ? <ManageEnergy/> : <Login/>}/>
           <Route path="/manage-water" element={user ? <ManageWater/> : <Login/>}/>
           <Route path="/controls" element={user ? <Controls/> : <Login/>}/>
+          <Route path="/add_industry" element={user ? <Addindustry/> : <Login/>}/>
           <Route path="/logs" element={user ? <Logs/> : <Login/>}/>
           {/* <Route path="/forgotpassword" element= {user ? <Navigate to="/" />: <Forgotpassword/>}/> */}
         </Routes>
