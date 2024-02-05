@@ -1,10 +1,33 @@
 const router = require("express").Router();
-const Industries = require("../models/Industries");
+const Industry = require("../models/Industries");
 const PDFDocument = require("pdfkit");
+
+let industryIdCounter = 1;
+
+router.post('/upload', async (req, res) => {
+    try {
+        const { name, place, generatorid, tankid } = req.body;
+        const industryId = industryIdCounter++;
+        console.log(name, place, generatorid, tankid);
+        const newIndustry = new Industry({
+            Industry_ID: industryId,
+            Industry_name: name,
+            Industry_place: place,
+            Generator_id: generatorid,
+            Tank_id: tankid
+        });
+        await newIndustry.save();
+        console.log("Industry created successfully");
+        res.status(201).json({ message: 'Industry created successfully', Industry: newIndustry });
+    } catch (error) {
+        console.error('Error creating industry:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
 
 router.get('/download', async (req, res) => {
     try {
-        const industries = await Industries.find({});
+        const industries = await Industry.find({});
 
         // Create a new PDF document
         const doc = new PDFDocument();

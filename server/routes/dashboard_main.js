@@ -41,48 +41,57 @@ router.get('/generator', async(req,res)=>{
         return res.status(500).json({ success:false, message: 'Internal server error'})
     }
 })
-
-//Industry_List
-router.get('/industries_list', async (req, res) => {
+router.get('/industries_list', async(req,res)=>{
     try {
-        const industries = await Industries.aggregate([
-            {
-                $lookup: {
-                    from: 'generators',
-                    localField: 'Industry_ID',
-                    foreignField: 'Industry_ID',
-                    as: 'generators'
-                }
-            },
-            {
-                $lookup: {
-                    from: 'tanks',
-                    localField: 'Industry_ID',
-                    foreignField: 'Industry_ID',
-                    as: 'tanks'
-                }
-            },
-            {
-                $unwind: { path: '$generators', preserveNullAndEmptyArrays: true }
-            },
-            {
-                $unwind: { path: '$tanks', preserveNullAndEmptyArrays: true }
-            },
-            {
-                $project: {
-                    _id: 1,
-                    Industry_ID: 1,
-                    Industry_name: 1,
-                    Industry_place: 1,
-                    Generator_ID: '$generators.Generator_ID',
-                    Tank_ID: '$tanks.Tank_ID'
-                }
-            }
-        ]);
-        res.json(industries);
+        const industries = await Industries.find();
+        res.status(200).json({ industries });
     } catch (error) {
+        console.error(error);
         res.status(500).json({ error: 'Internal server error' });
     }
-});
+})
+
+//Industry_List
+// router.get('/industries_list', async (req, res) => {
+//     try {
+//         const industries = await Industries.aggregate([
+//             {
+//                 $lookup: {
+//                     from: 'generators',
+//                     localField: 'Industry_ID',
+//                     foreignField: 'Industry_ID',
+//                     as: 'generators'
+//                 }
+//             },
+//             {
+//                 $lookup: {
+//                     from: 'tanks',
+//                     localField: 'Industry_ID',
+//                     foreignField: 'Industry_ID',
+//                     as: 'tanks'
+//                 }
+//             },
+//             {
+//                 $unwind: { path: '$generators', preserveNullAndEmptyArrays: true }
+//             },
+//             {
+//                 $unwind: { path: '$tanks', preserveNullAndEmptyArrays: true }
+//             },
+//             {
+//                 $project: {
+//                     _id: 1,
+//                     Industry_ID: 1,
+//                     Industry_name: 1,
+//                     Industry_place: 1,
+//                     Generator_ID: '$generators.Generator_ID',
+//                     Tank_ID: '$tanks.Tank_ID'
+//                 }
+//             }
+//         ]);
+//         res.json(industries);
+//     } catch (error) {
+//         res.status(500).json({ error: 'Internal server error' });
+//     }
+// });
 
 module.exports = router;

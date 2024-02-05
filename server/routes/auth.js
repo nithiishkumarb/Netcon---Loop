@@ -2,13 +2,15 @@ const router=require("express").Router();
 const User=require("../models/user.js");
 const bcrypt=require("bcrypt");
 
-//Register
+//Create User API
 router.post('/register', async (req, res) => {
     try {
         const salt = await bcrypt.genSalt(10);
         const hashedPass = await bcrypt.hash(req.body.password, salt);
         const newUser = new User({
             company_id: req.body.company_id,
+            company_name:req.body.company_name,
+            user_id:req.body.user_id,
             email: req.body.email,
             password: hashedPass,
             role: req.body.role,

@@ -11,7 +11,15 @@ const IndustrySchema = new mongoose.Schema({
     Industry_place: {
         type: String,
         required: true
+    },
+    Generator_id:{
+        type:Number,
+        required:true
+    },
+    Tank_id:{
+        type:Number,
+        required:true
     }
-});
-module.exports = mongoose.model('industries', IndustrySchema);
+},{ versionKey: false });
+module.exports = mongoose.model('Industry', IndustrySchema);
 
