@@ -65,10 +65,20 @@ export const fetchIndustriesPDF = async () => {
       throw error;
   }
 };
+
 export const Tanks_listcall=async()=>{
   try{
     const response=await axios.get('http://localhost:6001/api/managewater/tankslist')
     return response.data
+  }catch(err){
+    return err
+  }
+}
+
+export const Industry_add_call=async(data)=>{
+  try{
+    const response=await axios.post('http://localhost:6001/api/industries/upload',data)
+    return response.status
   }catch(err){
     return err
   }

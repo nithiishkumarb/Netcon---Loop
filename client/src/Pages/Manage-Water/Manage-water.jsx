@@ -1,13 +1,13 @@
 import "./manage-water.css"
 import Topbar from "../../Components/Topbar/Topbar"
-import Navbar from "../../Components/navbar/Navbar.jsx"
+import Sidebar from "../../Components/Sidebar/Sidebar.jsx"
 import WTotalconsumption from "./WTotalconsumption"
 import Tanks from "./Tanks"
 import WGraph from "./WGraph"
 const ManageWater = () => {
     return (
         <div className="manage-water">
-            <Navbar/> 
+            <Sidebar/> 
             <div className='manage-water_container'>
                 <Topbar/>
                 <div className='manage-water-container'>

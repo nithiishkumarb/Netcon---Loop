@@ -4,11 +4,11 @@ import Totalconsumption from './Totalconsumption';
 import Todayconsumption from './Todayconsumption';
 import Graph from './Graph';
 import Topbar from "../../Components/Topbar/Topbar"
-import Navbar from "../../Components/navbar/Navbar.jsx"
+import Sidebar from "../../Components/Sidebar/Sidebar.jsx"
 const ManageEnergy = () => {
   return (
     <div className='Manage-energy'>
-      <Navbar/>
+      <Sidebar/>
       <div className='Manage-energy_container'>
         <Topbar/> 
         <div className='manage-energy-container'>

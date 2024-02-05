@@ -2,11 +2,11 @@ import React from 'react'
 import "./industry.css"
 import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 import Topbar from '../Topbar/Topbar';
-import Navbar from '../navbar/Navbar';
+import Sidebar from '../Sidebar/Sidebar';
 const Industry = () => {
     return (
     <div className="Particular-industry">
-        <Navbar/>
+        <Sidebar/>
         <div className='industrys'>
             <Topbar/>
             <div className='industry-container'>

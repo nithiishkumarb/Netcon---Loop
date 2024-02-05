@@ -23,10 +23,10 @@ const Topbar = () => {
     return (
         <div className='Topbar'>
             <div className='TopbarRight'>
-                <Link to="/notification" className='notification-container'>
+                {/* <Link to="/notification" className='notification-container'>
                     <NotificationsActiveIcon/>
-                    {/* <span>1</span> */}
-                </Link>
+                    <span>1</span>
+                </Link> */}
                 <div onClick={handleProfileList} className='Profile'>
                     <AccountCircleIcon/>
                     <ArrowDropDownIcon  className='icons'/>

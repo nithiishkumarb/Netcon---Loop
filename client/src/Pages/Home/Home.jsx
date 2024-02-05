@@ -1,4 +1,4 @@
-import Navbar from '../../Components/navbar/Navbar.jsx'
+import Sidebar from '../../Components/Sidebar/Sidebar.jsx'
 import Topbar from '../../Components/Topbar/Topbar.jsx'
 import Rightbar from "../../Components/Rightbar/Rightbar.jsx"
 import Main from '../../Components/Main/Main.jsx';
@@ -6,7 +6,7 @@ import "./Home.css";
 const Home = () => {
     return (
         <div className='home'>
-            <Navbar/>
+            <Sidebar/>
             <div className='homecontainer'>
                 <Topbar/>
                 <div className='home_main'>

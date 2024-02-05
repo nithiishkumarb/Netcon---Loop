@@ -9,7 +9,8 @@ const Rightbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   useEffect(()=>{
     industry_listcall().then((response)=>{
-      Setindustrylist(response)
+      Setindustrylist(response.industries)
+    
     })
   },[])
   const filteredIndustries = industrylist.filter((industry) =>
@@ -31,8 +32,8 @@ const Rightbar = () => {
             <div className='industry' key={industry.Industry_ID}>
               <h3>{industry.Industry_name}</h3>
               <span>Location: {industry.Industry_place}</span>
-              <span>Tank ID: {industry.Tank_ID}</span>
-              <span>DG ID: {industry.Generator_ID}</span>
+              <span>Energy: {industry.Tank_id} kW</span>
+              <span>Water: {industry.Generator_id} m³</span>
               <Link to="/industry-netcon">
                 <KeyboardArrowRightIcon className='arrow-icon' />
               </Link>

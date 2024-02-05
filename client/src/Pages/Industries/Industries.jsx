@@ -2,29 +2,49 @@ import React, { useState, useEffect } from 'react';
 import "./Industries.css";
 import { Link } from 'react-router-dom';
 import Topbar from "../../Components/Topbar/Topbar";
-import Navbar from "../../Components/navbar/Navbar";
+import Sidebar from "../../Components/Sidebar/Sidebar";
 import SearchIcon from '@mui/icons-material/Search';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import { industry_listcall,fetchIndustriesPDF } from "../../apicalls";
+import { industry_listcall, fetchIndustriesPDF } from "../../apicalls";
+import Addindustry from "../../Components/Add industry/Addindustry"
 const Industries = () => {
   const [industryList, setIndustryList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [visibleaddindustry,setvisibleaddindustry]=useState(false)
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+
   useEffect(() => {
     industry_listcall().then((response) => {
-      if (Array.isArray(response)) {
-        setIndustryList(response);
+      if (Array.isArray(response.industries)) {
+        console.log(response.industries);
+        setIndustryList(response.industries);
       } else {
         setIndustryList([]);
       }
     });
   }, []);
-
-  // Filter industries based on the search query
-  const filteredIndustries = industryList.filter((industry) =>
-    industry.Industry_name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
+  const filterAndSortIndustries = () => {
+    const filteredList = industryList.filter((industry) =>
+      industry.Industry_name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    const sortedList = [...filteredList].sort((a, b) => {
+      if (sortConfig.direction === 'asc') {
+        return a[sortConfig.key] > b[sortConfig.key] ? 1 : -1;
+      } else {
+        return a[sortConfig.key] < b[sortConfig.key] ? 1 : -1;
+      }
+    });
+    return sortedList;
+  };
+  const handleSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    console.log('Sorting:', key, direction);
+    setSortConfig({ key, direction });
+  };
   const downloadPDF = async () => {
     try {
       const pdfBlob = await fetchIndustriesPDF();
@@ -37,18 +57,18 @@ const Industries = () => {
       console.error('Error downloading PDF:', error);
     }
   };
-  const add_industry=()=>{
-    window.open("/add_industry" , "_blank")
-  }
-
+  const add_industry = () => {
+    setvisibleaddindustry(!visibleaddindustry);
+  };
+  const filteredAndSortedIndustries = filterAndSortIndustries();
   return (
     <div className='Industries'>
-      <Navbar />
+      <Sidebar />
       <div className='Industries_container'>
         <Topbar />
         <div className='Industries-container'>
           <div className='Industries-Top'>
-            <h2>Industries</h2>
+            <h3>Industries</h3>
             <div className='Industry-Searchbar'>
               <input
                 placeholder='Search an industry...'
@@ -57,53 +77,75 @@ const Industries = () => {
               />
               <SearchIcon className='Industry-Searchbar-icon' />
             </div>
-            <button onClick={add_industry}><AddCircleOutlineIcon />Add industry</button>
-            <button onClick={downloadPDF}><FileDownloadIcon />Download</button>
+            <div className="buttons">
+              <button onClick={add_industry}><AddCircleOutlineIcon />Add industry</button>
+              <button onClick={downloadPDF}><FileDownloadIcon />Download</button>
+            </div>
           </div>
-          {
-            filteredIndustries.length>0 ? (
+          <div className='tables'>
+            {filteredAndSortedIndustries.length > 0 ? (
               <table className='Industries-list'>
-            <thead className='Industries-header'>
-              <tr>
-                <th>Si.No.</th>
-                <th>Industry ID</th>
-                <th>Industry Name</th>
-                <th>Location</th>
-                <th>Generator ID</th>
-                <th>Tank ID</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredIndustries.map((industry, index) => (
-                <tr className='Industries-Body' key={industry.Industry_ID}>
-                  <td>{index + 1}</td>
-                  <td>{industry.Industry_ID}</td>
-                  <td>{industry.Industry_name}</td>
-                  <td>{industry.Industry_place}</td>
-                  <td>{industry.Generator_ID}</td>
-                  <td>{industry.Tank_ID}</td>
-                  <td><Link to="/industry-netcon">View</Link></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-            ):(
-              <div>
+                <thead className='Industries-header'>
+                  <tr>
+                    <th>Industry ID</th>
+                    <th>Industry Name</th>
+                    <th>Generator ID</th>
+                    <th>Tank ID</th>
+                    <th onClick={() => handleSort('Generator_id')}>
+                      Water consumption
+                      {sortConfig.key === 'Generator_id' && (
+                        <span>{sortConfig.direction === 'asc' ? ' ↑' : ' ↓'}</span>
+                      )}
+                    </th>
+                    <th onClick={() => handleSort('Tank_id')}>
+                      Energy consumption
+                      {sortConfig.key === 'Tank_id' && (
+                        <span>{sortConfig.direction === 'asc' ? ' ↑' : ' ↓'}</span>
+                      )}
+                    </th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredAndSortedIndustries.map((industry) => (
+                    <tr className='Industries-Body' key={industry.Industry_ID}>
+                      <td>{industry.Industry_ID}</td>
+                      <td>{industry.Industry_name}</td>
+                      <td>{industry.Generator_id} </td>
+                      <td>{industry.Generator_id} </td>
+                      <td>{industry.Generator_id} m³</td>
+                      <td>{industry.Tank_id}kW</td>
+                      <td>
+                        <Link className="link_button" to="/industry-netcon">
+                          <button className='view_button'>View</button>
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <div className='no_result'>
                 <span>No result found</span>
               </div>
-            )
-          }
-          <div className='Industries-PageBtn'>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <button>Next</button>
+            )}
+          </div>
+          <div className='visibleIndustry'>
+            {visibleaddindustry && (<Addindustry add_industry={add_industry}/>)} 
           </div>
         </div>
+        {/* <footer>
+            <div className='Industries-PageBtn'>
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <button>Next</button>
+            </div>
+          </footer> */}
       </div>
-    </div>
+        
+    </div>  
   );
 };
 

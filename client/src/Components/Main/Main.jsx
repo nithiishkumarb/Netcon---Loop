@@ -1,10 +1,57 @@
 import React,{useState,useEffect} from 'react'
 import "./main.css"
+import CountUp from "react-countup"
 import {Link} from "react-router-dom"
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import BoltSharpIcon from '@mui/icons-material/BoltSharp';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import {industriesCall,tankscall,generatorcall} from "../../apicalls"
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { LineChart, Line,Tooltip} from "recharts";
+const data = [
+    {
+    name: "Page A",
+    uv: 1000,
+    pv: 2400,
+    amt: 2400
+    },
+    {
+    name: "Page B",
+    uv: 2000,
+    pv: 1398,
+    amt: 2210
+    },
+    {
+    name: "Page C",
+    uv: 3000,
+    pv: 9800,
+    amt: 2290
+    },
+    {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000
+    },
+    {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+    amt: 2181
+    },
+    {
+        name: "Page F",
+        uv: 2390,
+        pv: 3800,
+        amt: 2500
+    },
+    {
+        name: "Page G",
+        uv: 3490,
+        pv: 4900,
+        amt: 2100
+    }
+  ];
 const Main = () => {
     const [industries,SetIndustries]=useState(0);
     const [tanks,Settanks]=useState(0);
@@ -20,37 +67,90 @@ const Main = () => {
             Setgenerator(Object.keys(response).length)
         })
     }, []);
+    const CustomTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+            return (
+                <div className="custom-tooltip">
+                    <p className="label">{`${label} : ${payload[0].value}`}</p>
+                </div>
+            );
+        }
+        return null;
+    };
     return (
     <div className='dashboard-main'>
         <h3>Overview</h3>
         <div className='Total-counts'>
             <Link to="/industries" className='content-box industries'>
                 <span>Industires</span>
-                <h1>{industries}</h1>
+                <CountUp start={0} end={industries} delay={0}>
+                    {({ countUpRef }) => (
+                        <h1 ref={countUpRef}/>
+                    )}
+                </CountUp>
                 <div className='industries_icons'><ApartmentIcon/></div>
             </Link>
             <Link to="/manage-water" className='content-box Water-storage'>
                 <span>Water Tanks</span>
-                <h1>{tanks}</h1>
+                <CountUp start={0} end={tanks} delay={0}>
+                    {({ countUpRef }) => (
+                        <h1 ref={countUpRef}/>
+                    )}
+                </CountUp>
                 <div className='Water-storage-icons'><WaterDropIcon/></div>
             </Link>
             <Link to="/manage-energy" className='content-box generator'>
                 <span>Generator</span>
-                <h1>{genertor}</h1>
+                <CountUp start={0} end={genertor} delay={0}>
+                    {({ countUpRef }) => (
+                        <h1 ref={countUpRef}/>
+                    )}
+                </CountUp>
                 <div className='generator-icons'><BoltSharpIcon/></div>
             </Link>
         </div>
         <h3>Consumption</h3>
         <div className='consumption-container'>
             <Link to="/manage-water" className='consumption'>
+                <MoreVertIcon/>
                 <span>Water consumption</span>
-                <h1 className='total-water'>129,213,856 m³</h1>
-                <img src="/Assets/graph1.png" alt='graph' className='graph'/>
+                <div className='counts_container'>
+                    <CountUp start={0} end={129213856} delay={0}>
+                    {({ countUpRef }) => (
+                        <h1 className='total-water' ref={countUpRef}></h1>
+                    )}
+                    </CountUp>
+                    <h1>m³</h1>
+                </div>
+                <div className="graph">
+                    <LineChart width={275} height={100} data={data}>
+                    <Tooltip content={<CustomTooltip />}/>
+                    <Line
+                        type="monotone"
+                        dataKey="pv"
+                        strokeWidth={3}
+                        stroke="blue"
+                        activeDot={{ r: 8 }} />
+                    </LineChart>
+                </div>
             </Link>
             <Link to="/manage-energy" className='consumption'>
+                <MoreVertIcon/>
                 <span>Energy consumption</span>
-                <h1 className='total-energy'>12,900<span style={{ fontSize: '0.7em' }}>kW</span></h1>    
-                <img src="/Assets/graph2.png" alt='graph' className='graph'/>
+                <div className='counts_container'>
+                    <CountUp start={0} end={12900} delay={0}>
+                    {({ countUpRef }) => (
+                        <h1 className='total-water' ref={countUpRef}></h1>
+                    )}
+                    </CountUp>
+                    <h2>kW</h2>
+                </div>
+                <div className='graph'>
+                    <LineChart className='graph' width={275} height={100} data={data}>
+                        <Tooltip content={<CustomTooltip />}/>
+                        <Line type="monotone" dataKey="uv" stroke="green" strokeWidth={3} />
+                    </LineChart> 
+                </div>
             </Link>
         </div>
         <h3>Location</h3>

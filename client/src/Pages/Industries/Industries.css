@@ -1,6 +1,5 @@
 .Industries{
     display:flex;
-    font-family: 'Cabin', sans-serif;
 }
 .Industries_container{
     width:100%;
@@ -9,16 +8,17 @@
     display:flex;
     width:100%;
     flex-direction: column;
-    align-items: center;
-    height:calc(100vh - 50px);
-    justify-content: space-around;
+    height:calc(100vh - 100px);
+    position:relative;
 }
 .Industries-Top{
     display:flex;
-    width:  90%;
+    width:  100%;
     margin-top:25px;
-    align-items: center;
     justify-content: space-between;
+}
+.Industries-Top h3{
+    margin-left:25px;
 }
 .Industry-Searchbar{
     width: 300px;
@@ -39,10 +39,14 @@
     margin-left:40px;
     cursor:pointer;
 }
+.Industries-Top .buttons{
+    display:flex;
+    margin-right:20px;
+}
 .Industries-Top button{
-    border-radius: 10px;
+    border-radius: 5px;
     width: 120px;
-    height: 32px;
+    height: 34px;
     background-color: #143460;
     color:white;
     display:flex;
@@ -50,32 +54,46 @@
     justify-content: space-around;
     border:none;
     cursor:pointer;
+    margin-right: 20px;
+}
+.Industries-list .tables{
+    width:100%;
 }
 .Industries-list{
     width:90%;
-    margin-top: 25px;
+    margin:35px;
 }
 .Industries-list .Industries-header{
     background-color: #143460;
     color:white;
-    height:30px;
+    height:36px;
 }
 .Industries-Body td{
-    height: 30px;
+    height: 38px;
     text-align: center;
+    border-bottom: 1px solid #c4c3c3;
 }
-.Industries-Body:nth-child(even){
-    background-color: #D9D9D9;;
+.link_button .view_button{
+    background-color: rgb(1, 1, 129);
+    padding: 4px 20px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.view_button:hover{
+    background-color: rgb(0, 20, 48);
+    transform: translateY(-1px);
 }
 .Industries-PageBtn{
-    margin-top:20px;
-    width:18%;
+    width:100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 .Industries-PageBtn span{
     cursor: pointer;
+    margin-right:15px;
 }
 .Industries-PageBtn span:nth-child(1){
     border-radius: 50%;
@@ -96,3 +114,15 @@
     border-radius: 5px;
     cursor: pointer;
 } 
+.no_result{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:60vh;
+    width:100%;
+}
+.visibleIndustry{
+    position: absolute;
+    top: 0;
+    width:100%;
+}

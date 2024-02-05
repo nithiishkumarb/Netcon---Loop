@@ -2,6 +2,7 @@ import {BrowserRouter,Routes,Route,Navigate} from "react-router-dom"
 import {useContext} from "react";
 import Login from "./Pages/login/Login.jsx";
 import Home from "./Pages/Home/Home.jsx"
+import Users from "./Pages/Users/Users.jsx";
 import Industries from "./Pages/Industries/Industries.jsx"
 import Industry from "./Components/Particular-Industry/industry.jsx"
 import ManageEnergy from "./Pages/Manage-energy/Manage-energy.jsx"
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" exact element={user? <Home/> : <Login/>}/>
           <Route path="/login" element={user ? <Navigate to={"/"}/> :<Login/>}/>
           <Route path="/industries" element={user ? <Industries/>:  <Login/>}/>
+          <Route path="/users" element={user ? <Users/>:  <Login/>}/>
           <Route path="/industry-netcon" element={user ? <Industry/> : <Login/>}/>
           <Route path="/manage-energy" element={user ? <ManageEnergy/> : <Login/>}/>
           <Route path="/manage-water" element={user ? <ManageWater/> : <Login/>}/>

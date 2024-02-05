@@ -25,19 +25,14 @@
     display:flex;
     position: relative;
 }
+.Count{
+    display:flex;
+    align-items: end;
+}
 .Design-Box{
     width:10px;
     height:100%;
     border-radius: 5px 0px 0px 5px;
-}
-.Overall{
-    background-color: rgb(214, 3, 147);
-}
-.Hvac{
-    background-color:blue;
-}
-.Light{
-    background-color: #1A7C01;
 }
 .Box-container{
     display:flex;
@@ -55,11 +50,20 @@
     top:10px;
     right:12px;
 }
+.Overall{
+    background-color:rgb(214, 3, 147);
+}
 .overall{
     color:rgb(214, 3, 147);
 }
+.Hvac{
+    background-color:blue;
+}
 .hvac{
     color:blue;
+}
+.Light{
+    background-color:#1A7C01;
 }
 .light{
     color:#1A7C01;

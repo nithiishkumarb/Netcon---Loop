@@ -56,3 +56,12 @@
 .ListIcons{
     margin: 0px 10px 0px 20px;
 }
+.sidebar_menu{
+    display:flex;
+    justify-content: end;
+    color:#D4D4D4;
+}
+.sidebar_menu .menuicon{
+    margin:10px 15px 0px 0px;
+    cursor: pointer;
+}

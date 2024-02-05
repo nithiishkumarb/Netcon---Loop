@@ -2,6 +2,7 @@ import "./Manage-energy.css"
 import TimelineIcon from '@mui/icons-material/Timeline';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import CountUp from "react-countup"
 const Todayconsumption = () => {
   return (
     <div className='Today-consumption'>
@@ -13,16 +14,30 @@ const Todayconsumption = () => {
                 </div>
                   <div className='Today-Overall-Container'>
                     <h5>Overall</h5>
-                    <h3 className='overall'>12,000 <span Style="font-size: medium">w/h</span></h3>
+                    <div className="Count">
+                      <CountUp start={0} end={12000} delay={0}>
+                        {({ countUpRef }) => (
+                            <h3 className='overall' style={{color:"rgb(214, 3, 147)"}} ref={countUpRef}></h3>
+                        )}
+                      </CountUp>
+                      <h4 style={{marginLeft:5,color:"rgb(214,3,147"}}>w/h</h4>
+                    </div>
                   </div>
-              </div>
+                </div>
               <div className='Today-HVAC'>
                   <div className='icons icons-hvac'>
                     <AcUnitIcon/>
                   </div>
                   <div className='Today-Overall-Container'>
                     <h5>HVAC</h5>
-                    <h3 className='hvac'>6,000 <span Style="font-size: medium">w/h</span></h3>
+                    <div className="Count">
+                      <CountUp start={0} end={6000} delay={0}>
+                        {({ countUpRef }) => (
+                            <h3 className='overall' style={{color:"blue"}} ref={countUpRef}></h3>
+                        )}
+                      </CountUp>
+                      <h4 style={{marginLeft:5,color:"blue"}}>w/h</h4>
+                    </div>
                   </div>
               </div>
               <div className='Today-Light'>
@@ -31,7 +46,14 @@ const Todayconsumption = () => {
                 </div>
                 <div className='Today-Overall-Container'>
                   <h5>Light & others</h5>
-                  <h3 className='light'>6,000 <span Style="font-size: medium">w/h</span></h3>
+                  <div className="Count">
+                      <CountUp start={0} end={6000} delay={0}>
+                        {({ countUpRef }) => (
+                            <h3 className='overall' style={{color:"green"}} ref={countUpRef}></h3>
+                        )}
+                      </CountUp>
+                      <h4 style={{marginLeft:5,color:"green"}}>w/h</h4>
+                    </div>
                 </div>
               </div>
             </div>
