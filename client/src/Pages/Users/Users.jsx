@@ -1,4 +1,4 @@
-import Addusers from "../../Components/Addusers/Addusers.jsx"
+import Add_users from "../../Components/Addusers/Addusers.jsx"
 import "./user.css"
 import {useState,useEffect} from "react"
 import {CreateIcon,SearchIcon}from "../../icons.js"
@@ -21,7 +21,6 @@ const Users = () => {
     }
     return (
         <div className='users'>
-            <div className='users_container'>
                 <div className='user-container'>
                 <div className='user-Top'>
                     <h3>Users</h3>
@@ -68,8 +67,7 @@ const Users = () => {
                 </div>
                 </div>
                 <div>
-                {isCreatePopupVisible && ( <Addusers Cancel={Cancel_addUser}/>)}
-            </div>
+                {isCreatePopupVisible && ( <Add_users Cancel={Cancel_addUser}/>)}
             </div>
             </div>
         );

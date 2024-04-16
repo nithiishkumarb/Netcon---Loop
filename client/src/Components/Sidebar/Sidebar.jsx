@@ -10,7 +10,7 @@ const Sidebar = () => {
         {link:"/users", item:"Users",icons:<PersonAddIcon/>},
         {link:"/manage-energy", item:"Manage Energy", icons:<BoltSharpIcon/>},
         {link:"/manage-water",item:"Manage Water", icons:<WaterDropIcon/>},
-        {link:"/controls",item:"Controls", icons:<TuneIcon/>},
+        // {link:"/controls",item:"Controls", icons:<TuneIcon/>},
         {link:"/login",item:"Logout",icons:<LogoutIcon/>}
     ]
     

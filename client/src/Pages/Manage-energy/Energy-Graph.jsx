@@ -11,43 +11,43 @@ import {
 
 const data = [
   {
-    name: "24/01",
+    name: `${new Date().getDate()-6}/${new Date().getMonth()+1}`,
     HVAC: 4000,
     Others: 2400,
     amt: 2400
   },
   {
-    name: "25/01",
+    name:  `${new Date().getDate()-5}/${new Date().getMonth()+1}`,
     HVAC: 3000,
     Others: 1398,
     amt: 2210
   },
   {
-    name: "26/01",
+    name: `${new Date().getDate()-4}/${new Date().getMonth()+1}`,
     HVAC: 2000,
     Others: 9800,
     amt: 2290
   },
   {
-    name: "27/01",
+    name: `${new Date().getDate()-3}/${new Date().getMonth()+1}`,
     HVAC: 2780,
     Others: 3908,
     amt: 2000
   },
   {
-    name: "28.01",
+    name: `${new Date().getDate()-2}/${new Date().getMonth()+1}`,
     HVAC: 1890,
     Others: 4800,
     amt: 2181
   },
   {
-    name: "Yesterday",
+    name: `${new Date().getDate()-1}/${new Date().getMonth()+1}`,
     HVAC: 2390,
     Others: 3800,
     amt: 2500
   },
   {
-    name: "today",
+    name: `${new Date().getDate()}/${new Date().getMonth()+1}`,
     HVAC: 3490,
     Others: 4300,
     amt: 2100

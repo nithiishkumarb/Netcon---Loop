@@ -12,6 +12,7 @@ export const loginCall = async (userCredential,dispatch) => {
       return err.response
   }
 }
+
 //Industries API call
 export const industriesCall= async()=>{
   try{
@@ -42,7 +43,7 @@ export const generatorcall=async()=>{
   }
 }
 
-//Rightbar Industry_List
+//RightBar Industry_List
 export const industry_listcall=async()=>{
   try{
     const res=await axios.get("http://localhost:6001/api/dashboard/industries_list");
@@ -74,6 +75,7 @@ export const Tanks_listcall=async()=>{
     return err
   }
 }
+
 //Creating a Industry
 export const Industry_add_call=async(data)=>{
   try{
@@ -83,6 +85,7 @@ export const Industry_add_call=async(data)=>{
     return err
   }
 }
+
 //creating a User
 export const create_User_Call=async(data)=>{
   try{

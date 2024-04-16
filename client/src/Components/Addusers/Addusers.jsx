@@ -4,14 +4,14 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import ErrorIcon from '@mui/icons-material/Error';
 import {industry_listcall,create_User_Call} from "../../ApiCalls"
-const Addusers = ({Cancel}) => {
+const Add_users = ({Cancel}) => {
     const role=useRef();
     const industry=useRef();
     const name=useRef();
     const password=useRef();
     const confirm_pass=useRef();
     const [PassVisibile,setPassVisible]=useState(false)
-    const [ConformpassVisibile,setConformpassVisible]=useState(false)
+    const [ConformPassVisibile,setConformPassVisible]=useState(false)
     const [IndustryList,setIndustryList]=useState([]);
     const [IndustryDisabled,setIndustryDisabled]=useState(true)
     const [correct_Pass,setCorrect_pass]=useState(false)
@@ -20,14 +20,14 @@ const Addusers = ({Cancel}) => {
             setIndustryList(res.industries)
         })
     },[])
-    const handleusersubmit=(e)=>{
+    const handleUserSubmit=(e)=>{
         e.preventDefault();
         const credential={
             role:role.current.value,
             industry:industry.current.value,
             name:name.current.value,
             password:password.current.value,
-            conf0rm_password:confirm_pass.current.value
+            confirm_password:confirm_pass.current.value
         }
         if(password.current.value === confirm_pass.current.value){
             create_User_Call(credential).then((response)=>{
@@ -38,7 +38,7 @@ const Addusers = ({Cancel}) => {
             confirm_pass.current.focus();
         }
     }
-    const handlerolechanges=()=>{
+    const handleRoleChanges=()=>{
         if(role.current.value==="user"){
             setIndustryDisabled(false)
         }else{
@@ -46,12 +46,12 @@ const Addusers = ({Cancel}) => {
         }
     }
     return (
-        <div className="create_popup">
-            <form className="addusers_input_field" onSubmit={handleusersubmit}>
+        <div className="add-users">
+            <form className="add_users_input_field" onSubmit={handleUserSubmit}>
                 <h3>ADD USER</h3>   
                 <div className='add_users_input'>
                     <label htmlFor="role">Choose a Role :</label>
-                    <select ref={role} onChange={handlerolechanges} required>
+                    <select ref={role} onChange={handleRoleChanges} required>
                         <option value="">Select a role</option>
                         <option value="admin">Admin</option>
                         <option value="user">User</option>
@@ -86,10 +86,10 @@ const Addusers = ({Cancel}) => {
                     <label>Confirm password :</label>
                     <input style={{borderColor: correct_Pass ? "rgb(201, 21, 21)" : "initial"}}
                         ref={confirm_pass} 
-                        type={ ConformpassVisibile? "text": "password"} 
+                        type={ ConformPassVisibile? "text": "password"} 
                         placeholder="Enter a Confirm Password" required minLength={4} />
-                    <span style={{cursor:"pointer"}} onClick={()=>setConformpassVisible(!ConformpassVisibile)}>
-                    {ConformpassVisibile ? <VisibilityIcon/> : <VisibilityOffIcon/>}
+                    <span style={{cursor:"pointer"}} onClick={()=>setConformPassVisible(!ConformPassVisibile)}>
+                    {ConformPassVisibile ? <VisibilityIcon/> : <VisibilityOffIcon/>}
                     </span>
                 </div>
                 {correct_Pass &&
@@ -106,4 +106,4 @@ const Addusers = ({Cancel}) => {
         </div>
     )
 }
-export default Addusers
+export default Add_users

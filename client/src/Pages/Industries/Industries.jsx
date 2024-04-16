@@ -56,6 +56,7 @@ const Industries = () => {
       console.error('Error downloading PDF:', error);
     }
   };
+
   const add_industry = () => {
     setVisibleAddIndustry(!visibleAddIndustry);
   };
@@ -63,7 +64,6 @@ const Industries = () => {
   const filteredAndSortedIndustries = filterAndSortIndustries();
   return (
     <div className='Industries'>
-      <div className='Industries_container'>
         <div className='Industries-container'>
           <div className='Industries-Top'>
             <h3>Industries</h3>
@@ -132,7 +132,6 @@ const Industries = () => {
             {visibleAddIndustry && (<AddIndustry add_industry={add_industry}/>)} 
           </div>
         </div>
-      </div>
     </div>  
   );
 };

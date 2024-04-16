@@ -1,4 +1,4 @@
-import {BrowserRouter,Routes,Route,Navigate} from "react-router-dom"
+import {BrowserRouter,Routes,Route} from "react-router-dom"
 import "./style.css";
 import {useContext} from "react";
 import {Sidebar,AddIndustry} from "./Components/index.js"
@@ -12,7 +12,7 @@ function App() {
     <div className="app">
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          {user? <Sidebar/>: <Login/>}
+          {user ? <Sidebar/>: null }
           <Routes>
             <Route path="/" exact element={user? <Home/> : <Login/>}/>
             <Route path="/login" element={<Login/>}/>

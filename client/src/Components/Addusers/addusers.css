@@ -1,22 +1,22 @@
-.create_popup{
+.add-users{
     width:30%;
     height:440px;
     background: #ffffff;
     border:1.5px solid rgb(87, 87, 87);
     position: absolute;
-    top:53%;
+    top:50%;
     left:50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
 }
-.addusers_input_field{
+.add_users_input_field{
     display:flex;
     flex-direction: column;
     margin:0px 20px;
     justify-content: space-around;
     height:100%;
 }
-.addusers_input_field h3{
+.add_users_input_field h3{
     letter-spacing: 1.5px;
     color:#143460;
     text-align: center;

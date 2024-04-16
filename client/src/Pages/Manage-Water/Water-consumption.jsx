@@ -1,7 +1,7 @@
 import {TimelineIcon,TodayIcon,WaterfallChartIcon} from "../../icons"
 import CountUp from "react-countup";
 import "./manage-water.css"
-const WTotalconsumption = () => {
+const WaterConsumption = () => {
   return (
         <div className='Total-Wconsumption'>
             <h4>Total Consumption</h4>
@@ -52,4 +52,4 @@ const WTotalconsumption = () => {
           </div>
   )
 }
-export default WTotalconsumption
+export default WaterConsumption

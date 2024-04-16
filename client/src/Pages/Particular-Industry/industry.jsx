@@ -50,8 +50,6 @@ const Industry = () => {
     ]
     return (
     <div className="Particular-industry">
-        <div className='industrys'>
-            <Topbar/>
             <div className='industry-container'>
             <h4>Water consumption</h4>
                 <div className='industry-main-container total'>
@@ -180,7 +178,6 @@ const Industry = () => {
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 )
 }
