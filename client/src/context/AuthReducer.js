@@ -18,7 +18,6 @@ switch (action.type) {
         isFetching: false,
         error: true,
     };
-
     default:
     return state;
 }

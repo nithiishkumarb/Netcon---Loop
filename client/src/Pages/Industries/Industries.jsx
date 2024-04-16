@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import "./Industries.css";
+import '../../style.css'
 import { Link } from 'react-router-dom';
-import Topbar from "../../Components/Topbar/Topbar";
-import Sidebar from "../../Components/Sidebar/Sidebar";
-import SearchIcon from '@mui/icons-material/Search';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import { industry_listcall, fetchIndustriesPDF } from "../../apicalls";
-import Addindustry from "../../Components/Add industry/Addindustry"
+import {FileDownloadIcon,SearchIcon,AddCircleOutlineIcon}from "../../icons"
+import { industry_listcall, fetchIndustriesPDF } from "../../ApiCalls";
+import AddIndustry from "../../Components/Add industry/AddIndustry"
+
 const Industries = () => {
   const [industryList, setIndustryList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [visibleaddindustry,setvisibleaddindustry]=useState(false)
+  const [visibleAddIndustry,setVisibleAddIndustry]=useState(false)
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
   useEffect(() => {
     industry_listcall().then((response) => {
       if (Array.isArray(response.industries)) {
-        console.log(response.industries);
         setIndustryList(response.industries);
       } else {
         setIndustryList([]);
       }
     });
   }, []);
+
   const filterAndSortIndustries = () => {
     const filteredList = industryList.filter((industry) =>
       industry.Industry_name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -37,14 +35,15 @@ const Industries = () => {
     });
     return sortedList;
   };
+
   const handleSort = (key) => {
     let direction = 'asc';
     if (sortConfig.key === key && sortConfig.direction === 'asc') {
       direction = 'desc';
     }
-    console.log('Sorting:', key, direction);
     setSortConfig({ key, direction });
   };
+
   const downloadPDF = async () => {
     try {
       const pdfBlob = await fetchIndustriesPDF();
@@ -58,14 +57,13 @@ const Industries = () => {
     }
   };
   const add_industry = () => {
-    setvisibleaddindustry(!visibleaddindustry);
+    setVisibleAddIndustry(!visibleAddIndustry);
   };
+  
   const filteredAndSortedIndustries = filterAndSortIndustries();
   return (
     <div className='Industries'>
-      <Sidebar />
       <div className='Industries_container'>
-        <Topbar />
         <div className='Industries-container'>
           <div className='Industries-Top'>
             <h3>Industries</h3>
@@ -131,20 +129,10 @@ const Industries = () => {
             )}
           </div>
           <div className='visibleIndustry'>
-            {visibleaddindustry && (<Addindustry add_industry={add_industry}/>)} 
+            {visibleAddIndustry && (<AddIndustry add_industry={add_industry}/>)} 
           </div>
         </div>
-        {/* <footer>
-            <div className='Industries-PageBtn'>
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <button>Next</button>
-            </div>
-          </footer> */}
       </div>
-        
     </div>  
   );
 };

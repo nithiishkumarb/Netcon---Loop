@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-import {Tanks_listcall} from "../../apicalls"
+import {Tanks_listcall} from "../../ApiCalls"
 const Tanks = () => {
     const [Tanks,SetTanks]=useState([])
     useEffect(()=>{
@@ -9,7 +9,7 @@ const Tanks = () => {
     })
     return (
         <div className='Tanks'>
-            <h3>Tanks</h3>
+            <h4>Tanks</h4>
             <table className='Tank-list'>
                 <thead className='Tank-header'>
                     <tr>

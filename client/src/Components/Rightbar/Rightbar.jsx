@@ -1,10 +1,9 @@
 import React,{useState,useEffect} from 'react'
-import {industry_listcall} from "../../apicalls"
+import {industry_listcall} from "../../ApiCalls"
 import {Link} from "react-router-dom"
-import SearchIcon from '@mui/icons-material/Search';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import {KeyboardArrowRightIcon,SearchIcon} from "../../icons"
 import "./Rightbar.css"
-const Rightbar = () => {
+const RightBar = () => {
   const [industrylist,Setindustrylist]=useState([])
   const [searchQuery, setSearchQuery] = useState('');
   useEffect(()=>{
@@ -48,4 +47,4 @@ const Rightbar = () => {
     </div>
   )
 }
-export default Rightbar;
+export default RightBar;

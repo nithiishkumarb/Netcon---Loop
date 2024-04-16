@@ -1,0 +1,80 @@
+.Particular-industry{
+    display:flex;
+}
+.industrys{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+.industry-container{
+    width:100%;
+    margin:15px 0px 0px 20px;
+}
+.industry-main-container{
+    margin-top:20px;
+    display:flex;
+    justify-content: space-evenly;
+}
+.total-consumption {
+    width: 280px;
+    height: 100px;
+    border-radius: 10px;
+    border: 1.5px solid rgb(180, 180, 180);
+    display: flex;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.ids{
+    width:230px;
+}
+.total-consumption:hover {
+    transform: translateY(-5px); /* Lift up on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.12); /* Shadow effect on hover */
+}
+.total-consumption h2 {
+    margin-left: 20px;
+    letter-spacing: 1px;
+    color: #27374D; 
+}
+.total-consumption h4 {
+    margin-left: 20px;
+    letter-spacing: 1.5px;
+    color: #555;
+}
+.consumption-graph{
+    display:flex;
+    justify-content: space-around;
+}
+.calender-buttons button{
+    border:none;
+    font-weight: bold;
+    background-color: white;
+    margin-left:30px;
+    border-radius: 3.5px;
+    width:70px;
+    height:25px;
+    border:1px solid black;
+    cursor:pointer;
+}
+.calender-buttons button:first-child{
+    background-color: #27374D;
+    color:white;
+}
+.bar_design{
+    background-color: rgb(214, 3, 147);
+    width:10px;
+    height:100px;
+    border-radius: 5px 0px 0px 5px;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.consumption_content{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

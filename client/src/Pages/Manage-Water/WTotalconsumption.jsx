@@ -1,12 +1,10 @@
-import TimelineIcon from '@mui/icons-material/Timeline';
-import TodayIcon from '@mui/icons-material/Today';
-import WaterfallChartIcon from '@mui/icons-material/WaterfallChart';
+import {TimelineIcon,TodayIcon,WaterfallChartIcon} from "../../icons"
 import CountUp from "react-countup";
 import "./manage-water.css"
 const WTotalconsumption = () => {
   return (
         <div className='Total-Wconsumption'>
-            <h3>Total Consumption</h3>
+            <h4>Total Consumption</h4>
             <div className='Total-WConsumption-container'>
               <div className='Total-WConsumption-box'>
                 <div className='Rectangle-design Overall'/>
@@ -15,7 +13,7 @@ const WTotalconsumption = () => {
                   <div className='Counts'>
                     <CountUp start={0} end={123123} delay={0}>
                       {({ countUpRef }) => (
-                          <h2 ref={countUpRef}></h2>
+                          <h2 ref={countUpRef}>Total Sales:</h2>
                       )}
                     </CountUp>
                     <h2 style={{marginLeft:6}}>m³</h2>
@@ -30,7 +28,7 @@ const WTotalconsumption = () => {
                   <div className='Counts'>
                     <CountUp start={0} end={13123} delay={0}>
                       {({ countUpRef }) => (
-                          <h2 ref={countUpRef}></h2>
+                          <h2 ref={countUpRef}>Total Sales:</h2>
                       )}
                     </CountUp>
                     <h2 style={{marginLeft:6}}>m³</h2>
@@ -44,7 +42,7 @@ const WTotalconsumption = () => {
                   <h4>Tanks</h4>
                   <CountUp start={0} end={7} delay={0}>
                       {({ countUpRef }) => (
-                          <h2 ref={countUpRef}></h2>
+                          <h2 ref={countUpRef}>Total Sales:</h2>
                       )}
                     </CountUp>
                 </div>

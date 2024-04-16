@@ -1,12 +1,12 @@
 import { useRef } from "react";
-import "./Addindustry.css";
-import {Industry_add_call} from "../../apicalls"
+import "./AddIndustry.css";
+import {Industry_add_call} from "../../ApiCalls"
 import CloseIcon from '@mui/icons-material/Close';
-const Addindustry = ({add_industry}) => {
+const AddIndustry = ({add_industry}) => {
   const name=useRef();
   const place=useRef();
-  const generatorid=useRef();
-  const tankid=useRef();
+  const generatorId=useRef();
+  const tankId=useRef();
   const renderOptions = (count) => {
     const options = [];
     for (let i = 1; i <= count; i++) {
@@ -14,13 +14,13 @@ const Addindustry = ({add_industry}) => {
     }
     return options;
   };
-  const handlesubmit=(e)=>{
+  const handleSubmit=(e)=>{
     e.preventDefault();
     const industry={
       name:name.current.value,
       place:place.current.value,
-      generatorid:generatorid.current.value,
-      tankid:tankid.current.value,
+      generatorId:generatorId.current.value,
+      tankId:tankId.current.value,
     }
     Industry_add_call(industry).then((response)=>{
       try{
@@ -41,24 +41,24 @@ const Addindustry = ({add_industry}) => {
         <CloseIcon className="close_icons" onClick={add_industry}/>
       </div>
       <h3>Add Industry</h3>
-      <form className="form_container" onSubmit={handlesubmit}>
+      <form className="form_container" onSubmit={handleSubmit}>
         <div className="form_input">
-          <label htmlFor="input1">Enter a Name:</label>
-          <input type="text" placeholder="Name" ref={name} required/>
+          <label htmlFor="input1">Name:</label>
+          <input type="text" placeholder="Enter a Name" ref={name} required/>
         </div>
         <div className="form_input">
-          <label htmlFor="input2">Enter a Location:</label>
-          <input type="text" placeholder="Location" ref={place} required/>
+          <label htmlFor="input2">Location:</label>
+          <input type="text" placeholder="Enter a Location" ref={place} required/>
         </div>
         <div className="form_input">
           <label htmlFor="Generator">Generator ID:</label>
-          <select id="Generator" name="Generator" ref={generatorid} required>
+          <select id="Generator" name="Generator" ref={generatorId} required>
             {renderOptions(7)}
           </select>
         </div>
         <div>
           <label htmlFor="dropdown2">Tank ID:</label>
-          <select id="dropdown2" name="dropdown2" ref={tankid} required>
+          <select id="dropdown2" name="dropdown2" ref={tankId} required>
             {renderOptions(7)}
           </select>
         </div>
@@ -71,4 +71,4 @@ const Addindustry = ({add_industry}) => {
   );
 };
 
-export default Addindustry;
+export default AddIndustry;

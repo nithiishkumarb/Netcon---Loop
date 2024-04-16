@@ -2,7 +2,6 @@ import {useState,useContext} from 'react'
 import "./Topbar.css"
 import {Link,useNavigate} from "react-router-dom"
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { AuthContext } from "../../context/AuthContext.js";
 const Topbar = () => {
@@ -23,10 +22,6 @@ const Topbar = () => {
     return (
         <div className='Topbar'>
             <div className='TopbarRight'>
-                {/* <Link to="/notification" className='notification-container'>
-                    <NotificationsActiveIcon/>
-                    <span>1</span>
-                </Link> */}
                 <div onClick={handleProfileList} className='Profile'>
                     <AccountCircleIcon/>
                     <ArrowDropDownIcon  className='icons'/>

@@ -34,6 +34,9 @@
 .user-Searchbar input{
     background-color: transparent;
     margin-left: 10px;
+    width:65%;
+    height:75%;
+    border: none;
 }
 .user-Searchbar-icon{
     margin-left:40px;
@@ -78,35 +81,6 @@
     justify-content:space-evenly;
     align-items: center;
 }
-.user-PageBtn{
-    width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.user-PageBtn span{
-    cursor: pointer;
-    margin-right:15px;
-}
-.user-PageBtn span:nth-child(1){
-    border-radius: 50%;
-    background-color: #143460;
-    width:24px;
-    height:24px;
-    color:white;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.user-PageBtn button{
-    color:white;
-    background-color: #143460;
-    border:none;
-    width:70px;
-    height:25px;
-    border-radius: 5px;
-    cursor: pointer;
-} 
 .action_icons button{
     width:75px;
     height:25px;
@@ -135,41 +109,6 @@
 .delete_button:hover{
     background-color:rgb(124, 0, 0);
     transform: translateY(-2px);
-}
-.create_popup{
-    width:30%;
-    height:400px;
-    background-color:#143460;
-    background: #ffffff;
-    border:1.5px solid rgb(87, 87, 87);
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-.close_icon_container{
-    width:100%;
-    display:flex;
-    justify-content: end;
-    align-items: center;
-}
-.close_icon{
-    cursor:pointer;
-    margin:8px 8px 0px 0px ;
-    color:#143460;
-}
-.create_popup h3{
-    letter-spacing: 1.5px;
-    color:#143460;
-}
-.input_field{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 .no_result{
     display:flex;

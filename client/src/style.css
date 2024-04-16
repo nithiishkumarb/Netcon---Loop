@@ -1,0 +1,6 @@
+:root{
+    --blue:#143460;
+}
+.app{
+    display: flex;
+}

@@ -79,7 +79,7 @@ export default function App() {
 
   return (
     <div>
-    <h3 style={{marginBottom:20}}>Graph</h3>
+    <h4 style={{marginBottom:20}}>Graph</h4>
       <LineChart
         width={1100}
         height={300}

@@ -1,12 +1,10 @@
 import "./Manage-energy.css"
-import TimelineIcon from '@mui/icons-material/Timeline';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import {TimelineIcon,AcUnitIcon,LightbulbIcon} from "../../icons"
 import CountUp from "react-countup"
 const Todayconsumption = () => {
   return (
     <div className='Today-consumption'>
-            <h3>Today Consumption</h3>
+            <h4>Today Consumption</h4>
             <div className='Today-consumption-container'>
               <div className='Today-Overall'>
                 <div className='icons icons-overall'>
@@ -17,7 +15,7 @@ const Todayconsumption = () => {
                     <div className="Count">
                       <CountUp start={0} end={12000} delay={0}>
                         {({ countUpRef }) => (
-                            <h3 className='overall' style={{color:"rgb(214, 3, 147)"}} ref={countUpRef}></h3>
+                            <h3 className='overall' style={{color:"rgb(214, 3, 147)"}} ref={countUpRef}>k</h3>
                         )}
                       </CountUp>
                       <h4 style={{marginLeft:5,color:"rgb(214,3,147"}}>w/h</h4>
@@ -33,7 +31,7 @@ const Todayconsumption = () => {
                     <div className="Count">
                       <CountUp start={0} end={6000} delay={0}>
                         {({ countUpRef }) => (
-                            <h3 className='overall' style={{color:"blue"}} ref={countUpRef}></h3>
+                            <h3 className='overall' style={{color:"blue"}} ref={countUpRef}>Total Sales:</h3>
                         )}
                       </CountUp>
                       <h4 style={{marginLeft:5,color:"blue"}}>w/h</h4>
@@ -49,7 +47,7 @@ const Todayconsumption = () => {
                   <div className="Count">
                       <CountUp start={0} end={6000} delay={0}>
                         {({ countUpRef }) => (
-                            <h3 className='overall' style={{color:"green"}} ref={countUpRef}></h3>
+                            <h3 className='overall' style={{color:"green"}} ref={countUpRef}>Total Sales:</h3>
                         )}
                       </CountUp>
                       <h4 style={{marginLeft:5,color:"green"}}>w/h</h4>

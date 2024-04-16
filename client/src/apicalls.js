@@ -4,7 +4,7 @@ import axios from "axios";
 export const loginCall = async (userCredential,dispatch) => {
   dispatch({ type: "LOGIN_START" });
   try{
-    const res = await axios.post("http://localhost:6001/api/user/login", userCredential);
+    const res = await axios.post("/login", userCredential);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       return res.data
   } catch(err){ 
@@ -12,11 +12,10 @@ export const loginCall = async (userCredential,dispatch) => {
       return err.response
   }
 }
-
 //Industries API call
 export const industriesCall= async()=>{
   try{
-    const res=await axios.get("http://localhost:6001/api/dashboard/industries");
+    const res=await axios.get("http://172.18.6.76:6001/api/dashboard/industries");
     return res.data.data
   }catch(err){
     return err
@@ -66,6 +65,7 @@ export const fetchIndustriesPDF = async () => {
   }
 };
 
+//Tasks
 export const Tanks_listcall=async()=>{
   try{
     const response=await axios.get('http://localhost:6001/api/managewater/tankslist')
@@ -74,7 +74,7 @@ export const Tanks_listcall=async()=>{
     return err
   }
 }
-
+//Creating a Industry
 export const Industry_add_call=async(data)=>{
   try{
     const response=await axios.post('http://localhost:6001/api/industries/upload',data)
@@ -83,7 +83,24 @@ export const Industry_add_call=async(data)=>{
     return err
   }
 }
-
+//creating a User
+export const create_User_Call=async(data)=>{
+  try{
+    const response=await axios.post("http://localhost:6001/api/create_user", data)
+    return response.data
+  }catch(err){
+    return err
+  }
+}
+//List of the user
+export const user_list_call=async()=>{
+  try{
+    const res= await axios.get("https://jsonplaceholder.typicode.com/users")
+    return res.data
+  }catch(err){
+    return err
+  }
+}
 
 // export const ResetPasswordcall=async(email)=>{
 //   try {

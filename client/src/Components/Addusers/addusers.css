@@ -1,0 +1,66 @@
+.create_popup{
+    width:30%;
+    height:440px;
+    background: #ffffff;
+    border:1.5px solid rgb(87, 87, 87);
+    position: absolute;
+    top:53%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+.addusers_input_field{
+    display:flex;
+    flex-direction: column;
+    margin:0px 20px;
+    justify-content: space-around;
+    height:100%;
+}
+.addusers_input_field h3{
+    letter-spacing: 1.5px;
+    color:#143460;
+    text-align: center;
+}
+.add_users_input{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add_users_input select{
+    width:50%;
+    cursor:pointer;
+}
+.add_users_input input{
+    height:30px;
+    flex:2;
+    margin: 0px 10px;
+    padding-left:10px;
+    border-radius: 3px;
+}
+.add_users_input input:focus{
+    border:1.5px solid #4c4c4c;
+}
+.wrongpass_alert{
+    font-size: 12px;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    color:red;
+    align-items: center;
+}
+.addusers_buttons{
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+}
+.addusers_buttons button{
+    border:none;
+    width:75px;
+    height:30px;
+    border-radius: 5px;
+    color:white;
+    cursor: pointer;
+}
+.addusers_buttons button:hover{
+    transform: translateY(-1px);
+}

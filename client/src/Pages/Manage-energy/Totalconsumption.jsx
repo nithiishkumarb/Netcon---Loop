@@ -1,12 +1,10 @@
 import "./Manage-energy.css"
-import TimelineIcon from '@mui/icons-material/Timeline';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import {TimelineIcon,AcUnitIcon,LightbulbIcon} from "../../icons"
 import CountUp from "react-countup"
 const Totalconsumption = () => {
   return (
         <div className='Total-consumption'>
-            <h3>Total Consumption</h3>
+            <h4>Total Consumption</h4>
             <div className='Total-Consumption-container'>
               <div className='Total-Consumption-box'>
                 <div className='Design-Box Overall'/>
@@ -15,7 +13,7 @@ const Totalconsumption = () => {
                   <div className='Counts'>
                     <CountUp start={0} end={55846} delay={0}>
                       {({ countUpRef }) => (
-                          <h2 ref={countUpRef}></h2>
+                          <h2 ref={countUpRef}>k</h2>
                       )}
                     </CountUp>
                     <h2 style={{marginLeft:6}}>w/h</h2>
@@ -30,7 +28,7 @@ const Totalconsumption = () => {
                   <div className='Counts'>
                     <CountUp start={0} end={43123} delay={0}>
                       {({ countUpRef }) => (
-                          <h2 ref={countUpRef}></h2>
+                          <h2 ref={countUpRef}>k</h2>
                       )}
                     </CountUp>
                     <h2 style={{marginLeft:6}}>w/h</h2>
@@ -45,7 +43,7 @@ const Totalconsumption = () => {
                   <div className='Counts'>
                     <CountUp start={0} end={12723} delay={0}>
                       {({ countUpRef }) => (
-                          <h2 ref={countUpRef}></h2>
+                          <h2 ref={countUpRef}>k</h2>
                       )}
                     </CountUp>
                     <h2 style={{marginLeft:6}}>w/h</h2>

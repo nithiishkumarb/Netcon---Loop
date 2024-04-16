@@ -1,13 +1,11 @@
+/* Sidebar */
 .sidebar{
     background-color: #141E46;
     display:flex;
     flex-direction:column;
-    width: 200px;
     height: 100vh;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     scroll-behavior: smooth;
     position: sticky;
-    z-index: 1;
     top:0;
 }
 .LogoContainer{
@@ -17,11 +15,11 @@
     cursor:pointer;
 }
 .Logo{
-    margin-top:15px;
-    width:45px;
-    height: 35px;
+    margin-top:1.5rem;
+    width:2.8rem;
+    height: 2.3rem;
 }
-.Logoname{
+.LogoName{
     color:#D4D4D4;
     letter-spacing: 2px;
     font-weight: bolder;
@@ -30,15 +28,14 @@
 .sidebarList{
     display:flex;
     flex-direction: column;
-    margin-top:15px;
+    margin-top:1rem;
 }
 .sidebarList a{
     display:flex;
     align-items: center;
-    margin-top:10px;
-    width:200px;
-    height:40px;
-    border-radius: 20px;
+    margin-top:0.7rem;
+    width:9.3rem;
+    height:2.5rem;
     cursor: pointer;
     color:#D4D4D4;
     text-decoration:none;
@@ -54,14 +51,14 @@
     }
 }
 .ListIcons{
-    margin: 0px 10px 0px 20px;
+    margin: 0rem 0.6rem 0rem 1.25rem;
 }
 .sidebar_menu{
     display:flex;
     justify-content: end;
     color:#D4D4D4;
 }
-.sidebar_menu .menuicon{
-    margin:10px 15px 0px 0px;
+.sidebar_menu .menuIcon{
+    margin:0.6rem 0.9rem 0rem 0rem;
     cursor: pointer;
 }
